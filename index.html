@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uzma Fatima — AI/ML Engineer & Data Scientist</title>
+<meta name="description" content="Uzma Fatima — MSAI @ Northeastern. Building AI that works in the real world. LLMs, RAG, MLOps, Data Science.">
+<style>
+/* ── RESET & BASE ── */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#eeeee9;
+  --card:#ffffff;
+  --ink:#111111;
+  --ink2:#555555;
+  --ink3:#999999;
+  --border:#e0e0da;
+  --green:#16a34a;
+  --green-bg:#f0fdf4;
+  --green-border:#bbf7d0;
+  --purple:#7c3aed;
+  --purple-bg:#ede9fe;
+  --purple-border:#c4b5fd;
+  --amber:#92400e;
+  --amber-bg:#fef9c3;
+  --blue:#1d4ed8;
+  --blue-bg:#eff6ff;
+  --radius:18px;
+  --gap:13px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;min-height:100vh;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:inherit;}
+
+/* ── NAV ── */
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 36px;background:rgba(238,238,233,.88);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:200;
+}
+.nav-logo{font-size:18px;font-weight:900;letter-spacing:-1px;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{font-size:13px;color:var(--ink2);font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-avail{
+  display:flex;align-items:center;gap:7px;
+  padding:8px 18px;background:var(--card);
+  border-radius:30px;border:1px solid var(--border);
+  font-size:12px;color:#444;font-weight:600;
+}
+.nav-avail .pulse{
+  width:8px;height:8px;background:#22c55e;border-radius:50%;
+  animation:pulse 2s infinite;
+}
+
+/* ── PAGE ── */
+.page{padding:24px 36px 80px;}
+
+/* ── BENTO GRID ── */
+.bento{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:var(--gap);
+}
+.b{
+  border-radius:var(--radius);
+  padding:26px;
+  overflow:hidden;
+  position:relative;
+  background:var(--card);
+}
+
+/* ══ ROW 1 ══ */
+
+/* Intro — col 1-5, rows 1-2 */
+.b-intro{
+  grid-column:1/6;grid-row:1/3;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:300px;
+}
+.b-intro::after{
+  content:'';position:absolute;
+  width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(134,239,172,.06) 0%,transparent 70%);
+  bottom:-120px;right:-80px;pointer-events:none;
+}
+.bi-top{}
+.bi-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#555;margin-bottom:18px;font-weight:600;}
+.bi-name{font-size:54px;font-weight:900;letter-spacing:-3px;line-height:.9;margin-bottom:16px;}
+.bi-name .dim{color:#3a3a3a;}
+.bi-tagline{font-size:15px;color:#aaa;line-height:1.65;margin-bottom:20px;max-width:320px;}
+.bi-about{font-size:12px;color:#666;line-height:1.7;max-width:340px;margin-bottom:20px;}
+.bi-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.bi-chip{padding:5px 12px;border:1px solid #2a2a2a;border-radius:20px;font-size:11px;color:#777;font-weight:500;}
+.bi-chip.hi{border-color:#86efac;color:#86efac;}
+.bi-bottom{margin-top:20px;}
+.bi-ctas{display:flex;gap:10px;flex-wrap:wrap;}
+.bi-btn{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;border:none;transition:all .2s;}
+.bi-btn.p{background:#fff;color:#111;}
+.bi-btn.p:hover{background:#e5e5e5;}
+.bi-btn.s{background:#222;color:#aaa;border:1px solid #333;}
+.bi-btn.s:hover{color:#fff;border-color:#555;}
+.bi-btn.g{background:#16a34a;color:#fff;}
+.bi-btn.g:hover{background:#15803d;}
+
+/* Stats */
+.b-stat{
+  grid-column:span 2;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border:1px solid var(--border);
+}
+.bs-label{font-size:11px;color:var(--ink3);font-weight:500;margin-bottom:6px;}
+.bs-val{font-size:44px;font-weight:900;line-height:1;}
+.bs-val.green{color:var(--green);}
+.bs-val.purple{color:var(--purple);}
+.bs-sub{font-size:11px;color:var(--ink3);margin-top:4px;}
+
+/* Current role */
+.b-now{
+  grid-column:span 3;
+  background:var(--green-bg);border:1px solid var(--green-border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.bn-badge{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:10px;}
+.bn-role{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:4px;}
+.bn-co{font-size:13px;color:var(--green);font-weight:600;margin-bottom:8px;}
+.bn-desc{font-size:12px;color:#374151;line-height:1.6;}
+.bn-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.bn-chip{padding:3px 10px;background:#dcfce7;border-radius:3px;font-size:10px;color:var(--green);font-weight:700;}
+
+/* School */
+.b-school{
+  grid-column:span 2;
+  background:var(--purple-bg);border:1px solid var(--purple-border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.bsc-icon{font-size:26px;margin-bottom:10px;}
+.bsc-deg{font-size:14px;font-weight:800;color:#4c1d95;}
+.bsc-uni{font-size:12px;color:var(--purple);margin-top:4px;}
+.bsc-date{font-size:11px;color:#a78bfa;margin-top:auto;padding-top:12px;}
+
+/* ══ ROW 2 ══ */
+
+/* Skills */
+.b-skills{
+  grid-column:span 4;
+  border:1px solid var(--border);
+}
+.bsk-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:14px;}
+.bsk-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.bsk-item{
+  padding:8px 12px;border-radius:8px;
+  font-size:11px;color:#374151;font-weight:600;
+  background:#f7f7f4;
+}
+.bsk-item.hot{background:#fef3c7;color:#92400e;}
+.bsk-item.blue{background:var(--blue-bg);color:var(--blue);}
+
+/* Google highlight */
+.b-google{
+  grid-column:span 3;
+  background:linear-gradient(135deg,#f59e0b,#d97706);
+  color:#fff;display:flex;flex-direction:column;justify-content:space-between;
+}
+.bg-icon{font-size:28px;margin-bottom:10px;}
+.bg-head{font-size:15px;font-weight:800;line-height:1.3;margin-bottom:6px;}
+.bg-sub{font-size:12px;opacity:.85;line-height:1.6;}
+.bg-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;background:rgba(255,255,255,.2);
+  border-radius:20px;font-size:11px;font-weight:700;margin-top:14px;width:fit-content;
+}
+
+/* ══ ROW 3 — FEATURED PROJECT ══ */
+.b-proj-hero{
+  grid-column:1/8;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:210px;
+}
+.bph-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+.bph-tier{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#555;font-weight:600;}
+.bph-live{
+  display:flex;align-items:center;gap:6px;
+  padding:5px 14px;background:#22c55e;border-radius:20px;
+  font-size:11px;color:#fff;font-weight:700;
+}
+.bph-live::before{content:'';width:6px;height:6px;background:#fff;border-radius:50%;opacity:.7;}
+.bph-name{font-size:22px;font-weight:900;margin-bottom:8px;line-height:1.2;}
+.bph-desc{font-size:13px;color:#888;line-height:1.6;margin-bottom:16px;}
+.bph-metrics{display:flex;gap:28px;margin-bottom:16px;}
+.bph-m .mv{font-size:22px;font-weight:900;line-height:1;}
+.bph-m .ml{font-size:10px;color:#666;margin-top:2px;}
+.bph-stack{display:flex;flex-wrap:wrap;gap:6px;}
+.bph-stack span{padding:3px 10px;border:1px solid #2a2a2a;border-radius:4px;font-size:11px;color:#777;}
+.bph-links{display:flex;gap:8px;margin-top:12px;}
+.bph-link{padding:6px 14px;border-radius:6px;font-size:11px;font-weight:700;border:none;}
+.bph-link.gh{background:#222;color:#86efac;}
+.bph-link.lv{background:#22c55e;color:#fff;}
+
+/* Research */
+.b-research{
+  grid-column:8/13;
+  border:1px solid var(--border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.br-status{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 12px;background:var(--amber-bg);border-radius:3px;
+  font-size:11px;color:var(--amber);font-weight:700;margin-bottom:12px;width:fit-content;
+}
+.br-title{font-size:15px;font-weight:800;line-height:1.35;margin-bottom:8px;color:var(--ink);}
+.br-desc{font-size:12px;color:var(--ink2);line-height:1.65;margin-bottom:12px;}
+.br-stat{font-size:36px;font-weight:900;color:var(--ink);}
+.br-stl{font-size:11px;color:var(--ink3);}
+.br-kws{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.br-kw{padding:3px 9px;background:var(--green-bg);border-radius:3px;font-size:10px;color:var(--green);font-weight:600;}
+
+/* ══ ROW 4 — PROJECT CARDS ══ */
+.b-proj{
+  grid-column:span 4;
+  border:1px solid var(--border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.bp-tier{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:6px;font-weight:600;}
+.bp-tier.feat{color:var(--green);}
+.bp-google{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 9px;background:var(--amber-bg);border-radius:3px;
+  font-size:10px;color:var(--amber);font-weight:700;margin-bottom:6px;width:fit-content;
+}
+.bp-name{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--ink);line-height:1.25;}
+.bp-desc{font-size:12px;color:var(--ink2);line-height:1.65;margin-bottom:12px;flex:1;}
+.bp-metric{font-size:26px;font-weight:900;color:var(--ink);}
+.bp-metl{font-size:10px;color:var(--ink3);}
+.bp-stack{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;}
+.bp-stack span{padding:2px 8px;background:#f5f5f2;border-radius:3px;font-size:10px;color:#666;}
+.bp-links{display:flex;gap:7px;margin-top:10px;}
+.bp-link{
+  padding:5px 12px;border-radius:5px;font-size:11px;font-weight:700;border:none;
+  background:var(--green-bg);color:var(--green);border:1px solid var(--green-border);
+  transition:all .2s;
+}
+.bp-link:hover{background:var(--green);color:#fff;}
+.bp-link.dark{background:var(--ink);color:#86efac;border-color:var(--ink);}
+
+/* ══ ROW 5 — EXPERIENCE ══ */
+.b-exp{
+  grid-column:1/13;
+  border:1px solid var(--border);
+  padding:28px 32px;
+}
+.bex-head{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:20px;}
+.bex-scroll{
+  display:flex;gap:14px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;scrollbar-color:#ddd transparent;
+}
+.bex-scroll::-webkit-scrollbar{height:3px;}
+.bex-scroll::-webkit-scrollbar-thumb{background:#ddd;border-radius:3px;}
+.bex-tile{
+  flex-shrink:0;width:220px;
+  background:#f9f9f6;border-radius:12px;padding:18px;
+  border:1px solid var(--border);
+}
+.bex-tile.cur{background:var(--green-bg);border-color:var(--green-border);}
+.bet-date{font-size:10px;color:var(--ink3);margin-bottom:6px;}
+.bet-co{font-size:15px;font-weight:800;color:var(--ink);}
+.bet-role{font-size:11px;color:var(--ink2);margin-bottom:10px;}
+.bet-stat{font-size:20px;font-weight:900;color:var(--ink);}
+.bet-sub{font-size:10px;color:var(--ink3);margin-top:2px;}
+.bet-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;}
+.bet-tag{padding:2px 7px;background:#fff;border:1px solid var(--border);border-radius:3px;font-size:10px;color:#666;}
+
+/* ══ ROW 6 — RESUME + CONTACT + LEADERSHIP ══ */
+
+/* Resume download */
+.b-resume{
+  grid-column:span 3;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.bre-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#555;margin-bottom:12px;font-weight:600;}
+.bre-head{font-size:22px;font-weight:900;line-height:1.2;margin-bottom:6px;}
+.bre-sub{font-size:12px;color:#666;margin-bottom:20px;}
+.bre-btns{display:flex;gap:8px;flex-direction:column;}
+.bre-btn{
+  padding:11px 18px;border-radius:8px;font-size:13px;font-weight:700;
+  border:none;text-align:center;transition:all .2s;
+}
+.bre-btn.view{background:#fff;color:#111;}
+.bre-btn.view:hover{background:#e5e5e5;}
+.bre-btn.dl{background:#222;color:#aaa;border:1px solid #333;}
+.bre-btn.dl:hover{color:#fff;border-color:#555;}
+
+/* Leadership */
+.b-lead{
+  grid-column:span 5;
+  background:#1e1b4b;color:#fff;
+  display:flex;flex-direction:column;gap:0;
+}
+.bl-head{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#818cf8;font-weight:700;margin-bottom:14px;}
+.bl-item{padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(99,102,241,.2);}
+.bl-item:last-child{border:none;padding:0;margin:0;}
+.bl-role{font-size:10px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.bl-title{font-size:14px;font-weight:800;margin-bottom:4px;}
+.bl-desc{font-size:11px;color:#a5b4fc;line-height:1.6;}
+.bl-hackathon{
+  margin-top:12px;padding:10px 14px;
+  background:rgba(251,191,36,.12);border:1px solid rgba(251,191,36,.25);
+  border-radius:8px;
+}
+.bl-hack-badge{font-size:10px;color:#fbbf24;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;}
+.bl-hack-name{font-size:13px;font-weight:800;}
+.bl-hack-date{font-size:11px;color:#a5b4fc;margin-top:2px;}
+
+/* Contact */
+.b-contact{
+  grid-column:span 4;
+  background:var(--green-bg);border:1px solid var(--green-border);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.bc-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:10px;}
+.bc-head{font-size:20px;font-weight:900;color:var(--ink);line-height:1.2;margin-bottom:6px;}
+.bc-email{font-size:13px;color:var(--green);font-weight:700;margin-bottom:16px;word-break:break-all;}
+.bc-links{display:flex;gap:8px;flex-wrap:wrap;}
+.bc-link{
+  padding:8px 16px;background:#fff;border:1px solid var(--green-border);
+  border-radius:6px;font-size:12px;color:#374151;font-weight:600;transition:all .2s;
+}
+.bc-link:hover{background:var(--green);color:#fff;border-color:var(--green);}
+.bc-link.primary{background:var(--green);color:#fff;border-color:var(--green);}
+.bc-link.primary:hover{background:#15803d;}
+
+/* ── ANIMATIONS ── */
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}
+  50%{box-shadow:0 0 0 5px transparent}
+}
+
+/* ── RESUME MODAL ── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(6px);
+  z-index:1000;align-items:center;justify-content:center;
+}
+.modal-overlay.open{display:flex;}
+.modal{
+  background:#fff;border-radius:16px;padding:32px;
+  width:90%;max-width:500px;
+  box-shadow:0 24px 80px rgba(0,0,0,.3);
+}
+.modal h3{font-size:20px;font-weight:900;margin-bottom:8px;}
+.modal p{font-size:14px;color:#555;margin-bottom:24px;line-height:1.6;}
+.modal-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.modal-btn{
+  flex:1;padding:13px;border-radius:8px;font-size:14px;
+  font-weight:700;border:none;cursor:pointer;min-width:120px;text-align:center;
+}
+.modal-btn.p{background:#16a34a;color:#fff;}
+.modal-btn.s{background:#f5f5f5;color:#111;}
+.modal-close{
+  float:right;background:none;border:none;font-size:20px;
+  color:#999;cursor:pointer;margin-top:-8px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">UF.</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+    <div class="nav-avail"><span class="pulse"></span>Open · Summer 2026</div>
+  </div>
+</nav>
+
+<!-- RESUME MODAL -->
+<div class="modal-overlay" id="resumeModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>📄 Uzma's Résumé</h3>
+    <p>AI/ML Engineer & Data Scientist · MSAI @ Northeastern University<br>
+    Specializing in LLMs, RAG systems, and production ML deployment.</p>
+    <div class="modal-btns">
+      <a href="#" class="modal-btn p" target="_blank">👁 View Online</a>
+      <a href="#" class="modal-btn s" download>⬇ Download PDF</a>
+      <button class="modal-btn s" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+<div class="bento">
+
+  <!-- ══ ROW 1 ══ -->
+
+  <!-- INTRO -->
+  <div class="b b-intro">
+    <div class="bi-top">
+      <div class="bi-eyebrow">AI/ML Engineer · Data Scientist · Boston, MA</div>
+      <div class="bi-name">Uzma<br><span class="dim">Fatima</span></div>
+      <p class="bi-tagline">I build AI that works<br>in the real world.</p>
+      <p class="bi-about">MSAI student at Northeastern building end-to-end systems that ship — RAG pipelines, LLM fine-tuning, forecasting dashboards, and multimodal apps. Known for clear communication, fast adaptability, and a relentless focus on real impact.</p>
+      <div class="bi-chips">
+        <span class="bi-chip hi">RAG</span>
+        <span class="bi-chip hi">LangGraph</span>
+        <span class="bi-chip hi">LoRA/PEFT</span>
+        <span class="bi-chip hi">MLOps</span>
+        <span class="bi-chip">PyTorch</span>
+        <span class="bi-chip">Data Science</span>
+        <span class="bi-chip">MCP</span>
+      </div>
+    </div>
+    <div class="bi-bottom">
+      <div class="bi-ctas">
+        <button class="bi-btn p" onclick="openModal()">📄 View Résumé</button>
+        <a href="#projects" class="bi-btn s">View Projects →</a>
+        <a href="https://github.com/Aparnashree11" target="_blank" class="bi-btn g">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="b b-stat">
+    <div>
+      <div class="bs-label">AI/ML Projects</div>
+      <div class="bs-val green">6+</div>
+    </div>
+    <div class="bs-sub">End-to-end · Deployed</div>
+  </div>
+
+  <div class="b b-stat">
+    <div>
+      <div class="bs-label">Business Impact</div>
+      <div class="bs-val purple">$250K+</div>
+    </div>
+    <div class="bs-sub">Modeled · Forecasting</div>
+  </div>
+
+  <!-- CURRENT ROLE -->
+  <div class="b b-now">
+    <div>
+      <div class="bn-badge">🟢 Currently</div>
+      <div class="bn-role">AI Intern</div>
+      <div class="bn-co">@ Cerebrone.ai</div>
+      <p class="bn-desc">Building RAG pipelines, LangGraph agentic workflows, and MCP server integrations for scalable LLM systems.</p>
+    </div>
+    <div class="bn-chips">
+      <span class="bn-chip">RAG</span>
+      <span class="bn-chip">LangGraph</span>
+      <span class="bn-chip">MCP</span>
+      <span class="bn-chip">Agentic AI</span>
+    </div>
+  </div>
+
+  <!-- SCHOOL -->
+  <div class="b b-school">
+    <div>
+      <div class="bsc-icon">🎓</div>
+      <div class="bsc-deg">MS Artificial Intelligence</div>
+      <div class="bsc-uni">Northeastern University</div>
+    </div>
+    <div class="bsc-date">Boston · 2024 – 2026</div>
+  </div>
+
+  <!-- ══ ROW 2 ══ -->
+
+  <!-- SKILLS -->
+  <div class="b b-skills">
+    <div class="bsk-label">Core Stack</div>
+    <div class="bsk-grid">
+      <span class="bsk-item hot">🔥 RAG · LangChain</span>
+      <span class="bsk-item hot">🔥 LangGraph · MCP</span>
+      <span class="bsk-item hot">🔥 LoRA / PEFT</span>
+      <span class="bsk-item hot">🔥 Docker · AWS S3</span>
+      <span class="bsk-item">PyTorch · TensorFlow</span>
+      <span class="bsk-item">XGBoost · LSTM · ARIMA</span>
+      <span class="bsk-item blue">SQL · Tableau · Power BI</span>
+      <span class="bsk-item blue">FAISS · Pinecone · Chroma</span>
+    </div>
+  </div>
+
+  <!-- GOOGLE -->
+  <div class="b b-google">
+    <div>
+      <div class="bg-icon">🎤</div>
+      <div class="bg-head">Presented at Google's Cambridge Office</div>
+      <div class="bg-sub">Custom LLM Fine-Tuning MLOps Platform received strong reception from Google engineers.</div>
+    </div>
+    <div class="bg-badge">⭐ Industry Recognition</div>
+  </div>
+
+  <!-- ══ ROW 3 — FEATURED PROJECT ══ -->
+  <div class="b b-proj-hero" id="projects">
+    <div>
+      <div class="bph-top">
+        <div class="bph-tier">★ Featured Project · Live</div>
+        <a href="https://huggingface.co/spaces/uzmiee/Demand-Forecasting" target="_blank">
+          <div class="bph-live">Live Demo</div>
+        </a>
+      </div>
+      <div class="bph-name">Intelligent Demand Forecasting Platform</div>
+      <div class="bph-desc">Ensemble ML pipeline — LSTM + XGBoost + LightGBM + ARIMA with 100+ engineered features. Monte Carlo simulations for business impact modeling. Dockerized & deployed on HuggingFace with AWS S3 + CI/CD.</div>
+      <div class="bph-metrics">
+        <div class="bph-m"><div class="mv">$250K+</div><div class="ml">Business Impact</div></div>
+        <div class="bph-m"><div class="mv">4.78%</div><div class="ml">MAPE</div></div>
+        <div class="bph-m"><div class="mv">95.2%</div><div class="ml">Accuracy</div></div>
+        <div class="bph-m"><div class="mv">&lt;1s</div><div class="ml">Latency</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="bph-stack">
+        <span>PyTorch</span><span>XGBoost</span><span>LightGBM</span><span>ARIMA</span><span>Docker</span><span>AWS S3</span><span>Gradio</span><span>HuggingFace</span>
+      </div>
+      <div class="bph-links">
+        <a href="https://github.com/Aparnashree11" target="_blank" class="bph-link gh">GitHub ↗</a>
+        <a href="https://huggingface.co/spaces/uzmiee/Demand-Forecasting" target="_blank" class="bph-link lv">Live Demo ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="b b-research">
+    <div>
+      <div class="br-status">🟡 Pending Publication</div>
+      <div class="br-title">Robotic Inspection Systems for Electrical Substations: A Review</div>
+      <div class="br-desc">Co-authored review on AI-driven substation robotics — autonomous navigation, multi-modal sensing (LiDAR, thermal, ultrasonic), ML fault detection. Covers Boston Dynamics Spot, ABB Txplore, RIAUPEL-1.</div>
+      <div class="br-kws">
+        <span class="br-kw">AI Diagnostics</span>
+        <span class="br-kw">LiDAR SLAM</span>
+        <span class="br-kw">Smart Grid</span>
+        <span class="br-kw">Annual Reviews</span>
+      </div>
+    </div>
+    <div>
+      <div class="br-stat">69</div>
+      <div class="br-stl">References Synthesized</div>
+    </div>
+  </div>
+
+  <!-- ══ ROW 4 — PROJECT CARDS ══ -->
+
+  <!-- EmoAid -->
+  <div class="b b-proj">
+    <div>
+      <div class="bp-tier feat">★ Featured · APK Deployed</div>
+      <div class="bp-name">EmoAid — AI Mental Health Companion</div>
+      <div class="bp-desc">RAG pipeline (LangChain + GPT-4 + FAISS) over clinical literature. Mood tracking, sentiment analysis, anomaly detection. Flutter + CI/CD Android deployment with real-time AI response.</div>
+      <div class="bp-stack"><span>LangChain</span><span>GPT-4</span><span>FAISS</span><span>Flutter</span><span>Firebase</span><span>Flask</span></div>
+    </div>
+    <div>
+      <div class="bp-metric">92%+</div>
+      <div class="bp-metl">accuracy · &lt;0.8s latency · 300+ entries</div>
+      <div class="bp-links">
+        <a href="https://github.com/Aparnashree11" target="_blank" class="bp-link">GitHub ↗</a>
+        <button class="bp-link" onclick="alert('APK demo link — add yours here!')">APK Demo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LLM Fine-Tuning -->
+  <div class="b b-proj">
+    <div>
+      <div class="bp-tier feat">★ Featured</div>
+      <div class="bp-google">🎤 Google Cambridge</div>
+      <div class="bp-name">Custom LLM Fine-Tuning & MLOps</div>
+      <div class="bp-desc">LoRA/PEFT fine-tuning with Ray/K8s distributed training. Automated eval pipelines: accuracy, hallucination rate, drift & safety benchmarks. Real-time monitoring dashboards.</div>
+      <div class="bp-stack"><span>LoRA/PEFT</span><span>Ray</span><span>K8s</span><span>FastAPI</span><span>MLflow</span><span>FAISS</span><span>Pinecone</span></div>
+    </div>
+    <div>
+      <div class="bp-metric">+20%</div>
+      <div class="bp-metl">accuracy · &lt;1.2s inference latency</div>
+      <div class="bp-links">
+        <a href="https://github.com/Aparnashree11/CustomLLMFineTuning" target="_blank" class="bp-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DressUp -->
+  <div class="b b-proj">
+    <div>
+      <div class="bp-tier">Also Built</div>
+      <div class="bp-name">DressUp — AI Fashion Recommender</div>
+      <div class="bp-desc">Fashion-CLIP + GraphSAGE combining visual/text embeddings with graph collaborative filtering. TorchServe deployment, MLflow tracking, Streamlit monitoring dashboard.</div>
+      <div class="bp-stack"><span>Fashion-CLIP</span><span>GraphSAGE</span><span>PyTorch Geo.</span><span>TorchServe</span><span>MLflow</span></div>
+    </div>
+    <div>
+      <div class="bp-metric" style="font-size:18px;font-weight:900;">GNN + CLIP</div>
+      <div class="bp-metl">Recall@K · MRR · nDCG evaluation</div>
+      <div class="bp-links">
+        <a href="https://github.com/Aparnashree11/DressUp" target="_blank" class="bp-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Billing -->
+  <div class="b b-proj" style="grid-column:span 4;">
+    <div>
+      <div class="bp-tier">Also Built</div>
+      <div class="bp-name">Generative AI Billing Analytics</div>
+      <div class="bp-desc">Multimodal AI billing assistant — OCR + LSTM + SHAP anomaly detection + GPT-4 chatbot. 50+ billing documents, fraud detection, auto-pay workflows.</div>
+      <div class="bp-stack"><span>GPT-4</span><span>OCR</span><span>LSTM</span><span>SHAP</span><span>Gradio</span></div>
+    </div>
+    <div>
+      <div class="bp-metric">94%</div>
+      <div class="bp-metl">forecasting accuracy · fraud detection</div>
+      <div class="bp-links">
+        <a href="https://github.com/Aparnashree11" target="_blank" class="bp-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot -->
+  <div class="b b-proj" style="grid-column:span 4;">
+    <div>
+      <div class="bp-tier">Also Built</div>
+      <div class="bp-name">ECommerce Chatbot + Emotion AI</div>
+      <div class="bp-desc">Custom e-commerce chatbot with real-time VADER sentiment analysis — detects customer emotions and adapts responses dynamically for personalized shopping experiences.</div>
+      <div class="bp-stack"><span>NLP</span><span>VADER</span><span>Sentiment Analysis</span><span>Python</span></div>
+    </div>
+    <div>
+      <div class="bp-metric" style="font-size:18px;">Real-time</div>
+      <div class="bp-metl">emotion-adaptive responses</div>
+      <div class="bp-links">
+        <a href="https://github.com/Aparnashree11/ChatBot_with_emotion_analysis" target="_blank" class="bp-link">GitHub ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ROW 5 — EXPERIENCE ══ -->
+  <div class="b b-exp" id="experience">
+    <div class="bex-head">Experience — 3 Internships · 2 AI Startups</div>
+    <div class="bex-scroll">
+      <div class="bex-tile cur">
+        <div class="bet-date">Jan 2026 – Present</div>
+        <div class="bet-co">Cerebrone.ai</div>
+        <div class="bet-role">AI Intern · Remote · Current</div>
+        <div class="bet-stat">RAG + LangGraph</div>
+        <div class="bet-sub">Agentic AI · MCP Servers</div>
+        <div class="bet-tags"><span class="bet-tag">LLMs</span><span class="bet-tag">LangGraph</span><span class="bet-tag">MCP</span><span class="bet-tag">RAG</span></div>
+      </div>
+      <div class="bex-tile">
+        <div class="bet-date">Jun – Aug 2025</div>
+        <div class="bet-co">ContIQ LLC</div>
+        <div class="bet-role">AI Software Eng. Intern · Remote</div>
+        <div class="bet-stat">+20% Accuracy</div>
+        <div class="bet-sub">LoRA/PEFT · &lt;1.2s latency</div>
+        <div class="bet-tags"><span class="bet-tag">RAG</span><span class="bet-tag">LoRA</span><span class="bet-tag">Agentic AI</span><span class="bet-tag">React</span></div>
+      </div>
+      <div class="bex-tile">
+        <div class="bet-date">Mar – Jul 2024</div>
+        <div class="bet-co">Nazra Software</div>
+        <div class="bet-role">Data Science Intern · Remote</div>
+        <div class="bet-stat">+18% CTR</div>
+        <div class="bet-sub">Hybrid RecSys · A/B Testing · 5K+ reviews</div>
+        <div class="bet-tags"><span class="bet-tag">RecSys</span><span class="bet-tag">NLP</span><span class="bet-tag">Tableau</span><span class="bet-tag">SQL</span></div>
+      </div>
+      <div class="bex-tile">
+        <div class="bet-date">Jun – Nov 2022</div>
+        <div class="bet-co">Nexasoft (Malaysia)</div>
+        <div class="bet-role">IT Intern — Data Analytics</div>
+        <div class="bet-stat">500K+ Records</div>
+        <div class="bet-sub">ELT Pipelines · +45% Reporting Accuracy</div>
+        <div class="bet-tags"><span class="bet-tag">SQL</span><span class="bet-tag">Tableau</span><span class="bet-tag">ELT</span></div>
+      </div>
+      <div class="bex-tile">
+        <div class="bet-date">Sep – Dec 2025</div>
+        <div class="bet-co">Northeastern IST</div>
+        <div class="bet-role">Data & Operations Analyst</div>
+        <div class="bet-stat">Ops Dashboard</div>
+        <div class="bet-sub">Anomaly Detection · SQL Workflows</div>
+        <div class="bet-tags"><span class="bet-tag">SQL</span><span class="bet-tag">Tableau</span><span class="bet-tag">Excel</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ROW 6 — RESUME + LEAD + CONTACT ══ -->
+
+  <!-- RESUME -->
+  <div class="b b-resume">
+    <div>
+      <div class="bre-label">📄 Résumé</div>
+      <div class="bre-head">AI/ML Engineer &<br>Data Scientist</div>
+      <div class="bre-sub">MSAI · Northeastern · 3 internships · 6+ projects · Published research</div>
+    </div>
+    <div class="bre-btns">
+      <button class="bre-btn view" onclick="openModal()">👁 View Résumé</button>
+      <a href="#" download class="bre-btn dl">⬇ Download PDF</a>
+    </div>
+  </div>
+
+  <!-- LEADERSHIP -->
+  <div class="b b-lead" id="contact">
+    <div class="bl-head">Leadership & Community</div>
+    <div class="bl-item">
+      <div class="bl-role">GSG Senator · 2025–2026</div>
+      <div class="bl-title">Graduate Student Government</div>
+      <div class="bl-desc">Representing 20,000+ grad students. Built a mental health resources website, hosted campus awareness events, and organizing the Impacts Symposium — where students showcase AI & research to industry.</div>
+    </div>
+    <div class="bl-item">
+      <div class="bl-role">Board Member · 2025–2026</div>
+      <div class="bl-title">Khoury Student Advisory Board</div>
+      <div class="bl-desc">Advising on student engagement & career initiatives at Khoury College of Computer Science, Boston campus.</div>
+    </div>
+    <div class="bl-hackathon">
+      <div class="bl-hack-badge">🔜 Upcoming</div>
+      <div class="bl-hack-name">HackHealth Hackathon</div>
+      <div class="bl-hack-date">March 14–15, 2026 · Health × AI · Competing</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="b b-contact">
+    <div>
+      <div class="bc-label">Get In Touch</div>
+      <div class="bc-head">Let's build something great.</div>
+      <div class="bc-email">fatima.u@northeastern.edu</div>
+    </div>
+    <div class="bc-links">
+      <a href="mailto:fatima.u@northeastern.edu" class="bc-link primary">Email →</a>
+      <a href="#" target="_blank" class="bc-link">LinkedIn ↗</a>
+      <a href="https://github.com/Aparnashree11" target="_blank" class="bc-link">GitHub ↗</a>
+      <a href="https://huggingface.co/spaces/uzmiee/Demand-Forecasting" target="_blank" class="bc-link">HuggingFace ↗</a>
+    </div>
+  </div>
+
+</div><!-- end bento -->
+</div><!-- end page -->
+
+<script>
+function openModal(){document.getElementById('resumeModal').classList.add('open');}
+function closeModal(){document.getElementById('resumeModal').classList.remove('open');}
+document.getElementById('resumeModal').addEventListener('click',function(e){if(e.target===this)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+</body>
+</html>
