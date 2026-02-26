@@ -676,28 +676,26 @@ button{cursor:pointer;font-family:inherit;}
 
   <!-- LLM Fine-Tuning — with Google photo slot -->
   <div class="proj-wide" style="margin-bottom:10px;">
-    <div class="pc" style="display:block;padding:0;overflow:hidden;">
-      <!-- Photo slot -->
-       <!-- Photo slot -->
-      <div style="width:100%;height:180px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-        <img src="https://drive.google.com/thumbnail?id=1MKLwFe3dBKnf2qr5b4mWrtDUNJduBIGf&sz=w1000" style="width:100%;height:100%;object-fit:cover;object-position:center top;" alt="Presenting at Google Cambridge">
-        <div style="position:absolute;top:12px;left:12px;">
-          <div class="pc-badge goog">Presented at Google Cambridge, MA</div>
+    <div class="pc" style="display:grid;grid-template-columns:200px 1fr 130px;gap:20px;padding:20px;align-items:center;">
+      <!-- Photo slot - portrait orientation -->
+      <div style="width:200px;height:265px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;">
+        <img src="https://drive.google.com/thumbnail?id=1MKLwFe3dBKnf2qr5b4mWrtDUNJduBIGf&sz=w400" style="width:100%;height:100%;object-fit:cover;object-position:center;" alt="Presenting at Google Cambridge">
+        <div style="position:absolute;bottom:8px;left:8px;right:8px;">
+          <div class="pc-badge goog" style="font-size:9px;padding:3px 8px;">Presented at Google Cambridge, MA</div>
         </div>
       </div>
-      <!-- Content below photo -->
-      <div style="padding:20px;display:grid;grid-template-columns:1fr 130px;gap:24px;align-items:center;">
-        <div>
-          <div class="pc-tier ft">Featured · Industry Recognition</div>
-          <div class="pc-name">Custom LLM Fine-Tuning & MLOps Platform</div>
-          <div class="pc-desc">Production-grade MLOps — LoRA/PEFT fine-tuning, Ray/K8s distributed training, automated evaluation (accuracy, hallucination, drift, safety), real-time monitoring and full failure-mode analysis.</div>
-          <div class="pc-stack"><span class="pcs">LoRA/PEFT</span><span class="pcs">Ray</span><span class="pcs">Kubernetes</span><span class="pcs">FastAPI</span><span class="pcs">MLflow</span><span class="pcs">FAISS</span><span class="pcs">Pinecone</span></div>
-          <div class="pc-links" style="margin-top:10px;"><a href="https://github.com/uXmii/CustomLLMFineTuning" target="_blank" class="pcl gh">GitHub</a></div>
-        </div>
-        <div class="pw-r">
-          <div><div class="pwr-v" style="color:var(--g);">+20%</div><div class="pwr-l">accuracy</div></div>
-          <div><div class="pwr-v" style="color:var(--p);font-size:20px;">Ray+K8s</div><div class="pwr-l">distributed</div></div>
-        </div>
+      <!-- Content -->
+      <div>
+        <div class="pc-tier ft">Featured · Industry Recognition</div>
+        <div class="pc-name">Custom LLM Fine-Tuning & MLOps Platform</div>
+        <div class="pc-desc">Production-grade MLOps — LoRA/PEFT fine-tuning, Ray/K8s distributed training, automated evaluation (accuracy, hallucination, drift, safety), real-time monitoring and full failure-mode analysis.</div>
+        <div class="pc-stack"><span class="pcs">LoRA/PEFT</span><span class="pcs">Ray</span><span class="pcs">Kubernetes</span><span class="pcs">FastAPI</span><span class="pcs">MLflow</span><span class="pcs">FAISS</span><span class="pcs">Pinecone</span></div>
+        <div class="pc-links" style="margin-top:10px;"><a href="https://github.com/uXmii/CustomLLMFineTuning" target="_blank" class="pcl gh">GitHub</a></div>
+      </div>
+      <!-- Stats -->
+      <div class="pw-r">
+        <div><div class="pwr-v" style="color:var(--g);">+20%</div><div class="pwr-l">accuracy</div></div>
+        <div><div class="pwr-v" style="color:var(--p);font-size:20px;">Ray+K8s</div><div class="pwr-l">distributed</div></div>
       </div>
     </div>
   </div>
